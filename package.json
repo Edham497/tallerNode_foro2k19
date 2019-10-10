@@ -1,0 +1,27 @@
+{
+  "name": "tallernode_foro2k19",
+  "version": "1.0.0",
+  "description": "tallerNode_foro2k19",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/",
+    "test": "nodemon server/",
+    "utils": "npm i express cors body-parser mongodb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edham497/tallerNode_foro2k19.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edham497/tallerNode_foro2k19/issues"
+  },
+  "homepage": "https://github.com/Edham497/tallerNode_foro2k19#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.2"
+  }
+}
