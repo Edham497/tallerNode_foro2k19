@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+@media (max-height: 400px){
+    html, body{
+        height: 120vh;
+        overflow-y: auto;
+    }
+}
+
+.main{
+    width: 100%;
+    height: calc(100% - 65px);
+    padding: 25px;
+    overflow-y: auto;
+}
+.bggrad1{
+    background: #1f4037;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #99f2c8, #1f4037);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #99f2c8, #1f4037) !important;/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.nodewp{
+    background-image: url("../img/nodeJS_wp.png") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+
+}
+
+//Components
+@import 'components/index';
+
+//layouts
+@import 'layouts/index';
+
+//Themes
+@import 'themes/index';
+
+.fRoboto{font-family: 'Roboto', sans-serif;}
+.displayN{display: none;}
+.cursorP{cursor:pointer;}
+
+/* position fixed to */
+.pos-fix-left{position: fixed; left: 0;}
+.pos-fix-rigth{position: fixed; right: 0;}
+.pos-fix-top{position: fixed; top: 0;}
+.pos-fix-bottom{position: fixed; bottom: 0;}
+
+/*position absolute to */
+
+.pos-absolute-left{position: relative; left: 0;}
+.pos-absolute-rigth{position: relative; right: 0;}
+.pos-absolute-top{position: relative; top: 0;}
+.pos-absolute-bottom{position: relative; bottom: 0;}
+
+/*max-width*/
+.mw500{max-width: 500px;}
+/*Padding*/
+.pdg10{padding:10px;}
+.pdg12{padding:12px;}
+.pdg16{padding:16px;}
+.pdg20{padding:20px;}
+.pdg25{padding:25px;}
+.pdg30{padding:30px;}
+.pdg35{padding:25px;}
+.pdg40{padding:30px;}
+.pdg45{padding:25px;}
+.pdg50{padding:30px;}
+
+.pdgT60{padding-top: 60px; box-sizing: border-box;}
+
+/*Margin top*/
+.mt10{margin-top: 10px;}
+.mt20{margin-top: 20px;}
+.mt30{margin-top: 30px;}
+.mt40{margin-top: 40px;}
+.mt50{margin-top: 50px;}
+
+/*Margin botton*/
+.mb10{margin-bottom: 10px;}
+.mb20{margin-bottom: 20px;}
+.mb30{margin-bottom: 30px;}
+
+/*Margin left*/
+.ml10{margin-left: 10px;}
+.ml20{margin-left: 20px;}
+.ml30{margin-left: 30px;}
+
+/*Margin rigth*/
+.mr10{margin-right: 10px;}
+.mr20{margin-right: 20px;}
+.mr30{margin-right: 30px;}
+
+/*Font size*/
+.fs12{font-size: 12px}
+.fs14{font-size: 14px}
+.fs16{font-size: 16px}
+.fs18{font-size: 18px}
+.fs20{font-size: 20px}
+.fs23{font-size: 23px}
+.fs25{font-size: 25px}
+.fs30{font-size: 30px}
+.fs35{font-size: 35px}
+.fs40{font-size: 40px}
+.fs50{font-size: 50px}
+.fs120{font-size: 100px}
+.fwB{font-weight: bold}
+.fwN{font-weight: lighter;}
+
+/*Interlineado*/
+.lh2{line-height: 2}
+.lh1p5{line-height: 1.5}
+
+/*Overflow*/
+.ofXscroll{
+	overflow:hidden;
+	overflow-x: auto;
+}
+.ofYscroll{
+	overflow:none;
+	overflow-y: auto;
+}
+
+.formulario{
+    width: 100%;
+    max-width: 720px;
+
+    ham-title{
+        font-size: 15px;
+        box-shadow: none;
+        border: none;
+        margin: 12px 0;
+    }
+}
+.ham-input{
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+}
+.ham-btn{
+    margin-top: 25px;
+    border: 1px solid rgba(230,230,230,0.5);
+    cursor: pointer;
+    border-radius: 10px;
+    min-width: 25px;
+    min-height: 25px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: .12s ease-in-out;
+  }
+  
+.ham-btn:hover{background: #3498db; border-bottom: solid 1px #3498db;color: #f1f1f1;}

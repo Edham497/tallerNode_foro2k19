@@ -1,0 +1,41 @@
+ham-header{
+    user-select: none;
+    @extend .full;
+    max-height: 65px !important;
+    @extend .grid, .grid-cc;
+    grid-template-columns: 200px 1fr;
+
+    ham-logo{
+        @extend .grid, .grid-cc;    
+        @extend .full;
+        transition: .12s ease-in-out;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    ham-nav{    
+        @extend .full;
+        display: flex;
+        flex-flow: row;
+        ham-item{
+            flex-basis: 0;
+            padding: 0 1em;
+            transition: .12s ease-in-out;
+            @extend .grid, .grid-cc;
+            &:hover{
+                background: #FFFFFF30;
+            }
+        }
+    }
+}
+
+@media (max-width: 720px){
+    ham-header{
+        position: relative;
+    }
+    ham-nav{
+        // display: none !important;
+        ham-item{
+            flex-grow: 1;
+        }
+    }
+}

@@ -1,17 +1,18 @@
 {
-  "name": "tallernode_foro2k19",
+  "name": "tallerNode_foro2k19",
   "version": "1.0.0",
   "description": "tallerNode_foro2k19",
   "main": "index.js",
   "scripts": {
     "start": "node server/",
     "test": "nodemon server/",
-    "utils": "npm i express cors body-parser mongodb"
+    "utils": "npm i bcryptjs connect-flash express express-handlebars express-mysql-session express-session express-validator morgan mysql passport passport-local timeago.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Edham497/tallerNode_foro2k19.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,9 +20,17 @@
   },
   "homepage": "https://github.com/Edham497/tallerNode_foro2k19#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
-    "mongodb": "^3.3.2"
+    "express-handlebars": "^3.1.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.0"
   }
 }

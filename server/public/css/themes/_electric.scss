@@ -1,0 +1,31 @@
+/*it's Electric*/
+@include createPalette('electric', 
+    $white:    (#e7f9ff,#7fa3af),
+    $lighter:  (#1e94b9,#bae4f6),
+    $light:    (#187795,#adcfde),
+    $normal:   (#1a5068,#d4dfe4),
+    $dark:     (#0d4053,#3392b5),
+    $darker:   (#022b3a,#43869e),
+    $black:    (#182027,#496780)
+);
+
+// .electric{
+//     ham-header{
+//         @extend .electric-black;
+//         ham-logo , ham-item{
+//             @extend .electric-normal;
+//             &:hover{
+//                 @extend .electric-light;
+//                 &:active{
+//                     @extend .electric-lighter;
+//                 }
+//             }
+//         }
+//     }
+//     .main{
+//         @extend .electric-darker;
+//     }
+// }
+
+//temazo
+@include createTheme('electric')

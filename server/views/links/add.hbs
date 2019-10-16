@@ -1,0 +1,15 @@
+<div class="ham-container pdg20 fs25 col ss material-light">
+    Agregar Link
+</div>
+<ham-container class="material-dark pdg30 col">
+    {{!-- <ham-title>Agregar Link</ham-title> --}}
+    <form action="/links/add" method="POST" class="formulario col">
+        <ham-title>Titulo</ham-title>
+        <input type="text" name="title" class="pdg10 ham-input material-darker">
+        <ham-title>URL</ham-title>
+        <input type="text" name="url" class="pdg10 ham-input material-darker">
+        <ham-title>Descripcion</ham-title>
+        <textarea name="description" rows="2" class="material-darker pdg10" style="resize: none; border: none;"></textarea>
+        <input class="ham-btn material-normal" type="submit" value="Agregar">
+    </form>
+</ham-container>

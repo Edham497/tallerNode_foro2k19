@@ -1,0 +1,33 @@
+@mixin createPalette($class, $colors...){
+    @each $var, $prop in keywords($colors){
+        .#{$class}-#{$var}{
+            background: nth($prop, 1);
+            color: nth($prop, 2);
+        }
+    }
+}
+
+@mixin content($color-default, $color-main) {
+    background: $color-default;
+    color: $color-main;
+}
+
+@mixin createTheme($palette){
+    .#{$palette}{
+        ham-header{
+            @extend .#{$palette}-normal;
+            ham-logo, ham-item{
+                @extend .#{$palette}-normal;
+                &:hover{
+                    @extend .#{$palette}-light;
+                    &:active{
+                        @extend .#{$palette}-lighter;
+                    }
+                }
+            }
+        }
+        .main{
+            @extend .#{$palette}-darker;
+        }
+    }
+}

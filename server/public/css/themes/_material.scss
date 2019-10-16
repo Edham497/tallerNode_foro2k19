@@ -1,0 +1,12 @@
+/*it's Electric*/
+@include createPalette('material',
+    $white:    (#f1f1f1, #0a0a0a),
+    $lighter:  (#6B7678,#3a3a3a),
+    $light:    (#3A4449,#f7f7f7),
+    $normal:   (#273136,#f4f4f5),
+    $dark:     (#1D2528,#6B7678),
+    $darker:   (#161B1E,#6B7678),
+    $black:    (#081018,#FFFFFF)
+);
+
+@include createTheme('material')

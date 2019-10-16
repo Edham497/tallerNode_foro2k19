@@ -1,0 +1,764 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-height: 400px) {
+  html, body {
+    height: 120vh;
+    overflow-y: auto;
+  }
+}
+
+.main {
+  width: 100%;
+  height: calc(100% - 65px);
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.bggrad1 {
+  background: #1f4037;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#99f2c8), to(#1f4037)) !important;
+  background: linear-gradient(to right, #99f2c8, #1f4037) !important;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nodewp {
+  background-image: url("../img/nodeJS_wp.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+}
+
+ham-container, .ham-container {
+  width: 100%;
+  max-width: 720px;
+}
+
+ham-container ham-title, .ham-container ham-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+ham-container ham-text, .ham-container ham-text {
+  overflow-y: auto;
+}
+
+ham-btn-container {
+  width: 100%;
+  text-shadow: 1px 1px #0a0a0a30;
+}
+
+.scrollAzul, ham-container, .ham-container, ham-container ham-text, .ham-container ham-text {
+  scrollbar-color: #3392b5 transparent;
+  scrollbar-width: thin;
+}
+
+.scrollAzul::-webkit-scrollbar, ham-container::-webkit-scrollbar, .ham-container::-webkit-scrollbar, ham-container ham-text::-webkit-scrollbar, .ham-container ham-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollAzul::-webkit-scrollbar-thumb, ham-container::-webkit-scrollbar-thumb, .ham-container::-webkit-scrollbar-thumb, ham-container ham-text::-webkit-scrollbar-thumb, .ham-container ham-text::-webkit-scrollbar-thumb {
+  background-color: #3392b5;
+}
+
+ham-btn {
+  display: -ms-grid;
+  display: grid;
+  padding: .6em .8em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 6px;
+}
+
+ham-header {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  max-height: 65px !important;
+  -ms-grid-columns: 200px 1fr;
+      grid-template-columns: 200px 1fr;
+}
+
+ham-header ham-logo {
+  -webkit-transition: .12s ease-in-out;
+  transition: .12s ease-in-out;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+ham-header ham-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+ham-header ham-nav ham-item {
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  padding: 0 1em;
+  -webkit-transition: .12s ease-in-out;
+  transition: .12s ease-in-out;
+}
+
+ham-header ham-nav ham-item:hover {
+  background: #FFFFFF30;
+}
+
+@media (max-width: 720px) {
+  ham-header {
+    position: relative;
+  }
+  ham-nav ham-item {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+.full, ham-header, ham-header ham-logo, ham-header ham-nav {
+  width: 100%;
+  height: 100%;
+}
+
+/* Implementacion de flexbox por Jorge Rea (Edham)
+ -	Flexbox es una implementacion que tiene css que nos permite ordenar los elementos
+	de una manera mas sencilla.
+ -  La manera de que funcione es asignandole la propiedad flex al contenedor padre 
+ 	y un flujo direccion(renglon o columna)
+*/
+/* Desliega los elementos en columna*/
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* X: variable; Y: en el inicio;*/
+  /* X: variable; Y: en el centro;*/
+  /* X: variable; Y: en el fin;*/
+}
+
+.col.ss {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.col.sc {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.col.se {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.col.cs {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.col.cc {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.col.ce {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.col.es {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.col.ec {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.col.ee {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+/* Despliega los elementos en renglon*/
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* X: estatica; Y: variable;*/
+  /* ajusta los elementos respecto al espacio que tienen alrededor*/
+  /* Ajusta los elementos al centro */
+  /* ajusta los elementos respecto al espacio que hay entre ellos*/
+}
+
+.row.up {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.row.middle {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.row.down {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.row.sa {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.row.cc {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.row.sb {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* la propiedad wrap nos permite que un contenedor se desplace hacia abajo 
+   si es que este se queda sin espacio*/
+.wp {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.nwp {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+/*Hace que los elementos dentro de la etiqueta tengan la misma proporcion*/
+.fg {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+/* parte la palabra si el contenedor donde esta se queda sin espacio*/
+.wordbk {
+  word-break: break-all;
+}
+
+@media (max-width: 720px) {
+  .fixFlow {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .fixFlowC {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.grid, ham-header, ham-header ham-logo, ham-header ham-nav ham-item {
+  display: -ms-grid;
+  display: grid;
+}
+
+.grid-cc, ham-header, ham-header ham-logo, ham-header ham-nav ham-item {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+/*it's Electric*/
+.material-white {
+  background: #f1f1f1;
+  color: #0a0a0a;
+}
+
+.material-lighter, .material ham-header ham-logo:hover:active, .material ham-header ham-item:hover:active {
+  background: #6B7678;
+  color: #3a3a3a;
+}
+
+.material-light, .material ham-header ham-logo:hover, .material ham-header ham-item:hover {
+  background: #3A4449;
+  color: #f7f7f7;
+}
+
+.material-normal, ham-btn.danger, .material ham-header, .material ham-header ham-logo, .material ham-header ham-item {
+  background: #273136;
+  color: #f4f4f5;
+}
+
+.material-dark {
+  background: #1D2528;
+  color: #6B7678;
+}
+
+.material-darker, .material .main {
+  background: #161B1E;
+  color: #6B7678;
+}
+
+.material-black {
+  background: #081018;
+  color: #FFFFFF;
+}
+
+/*it's Electric*/
+.electric-white {
+  background: #e7f9ff;
+  color: #7fa3af;
+}
+
+.electric-lighter, .electric ham-header ham-logo:hover:active, .electric ham-header ham-item:hover:active {
+  background: #1e94b9;
+  color: #bae4f6;
+}
+
+.electric-light, .electric ham-header ham-logo:hover, .electric ham-header ham-item:hover {
+  background: #187795;
+  color: #adcfde;
+}
+
+.electric-normal, .electric ham-header, .electric ham-header ham-logo, .electric ham-header ham-item {
+  background: #1a5068;
+  color: #d4dfe4;
+}
+
+.electric-dark, ham-btn.electric {
+  background: #0d4053;
+  color: #3392b5;
+}
+
+.electric-darker, .electric .main {
+  background: #022b3a;
+  color: #43869e;
+}
+
+.electric-black {
+  background: #182027;
+  color: #496780;
+}
+
+.frost {
+  background: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  color: #525252;
+}
+
+.frost::before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -25px;
+  right: 0;
+  top: -25px;
+  bottom: 0;
+  -webkit-box-shadow: inset 0 0 0 3000px #ffffff88;
+          box-shadow: inset 0 0 0 3000px #ffffff88;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  z-index: -1;
+}
+
+.darkfrost {
+  background: inherit;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  color: #ffffff;
+}
+
+.darkfrost::before {
+  content: "";
+  background: inherit;
+  position: absolute;
+  width: 150%;
+  min-height: 150%;
+  left: -25%;
+  right: 0;
+  top: -25%;
+  bottom: 0;
+  -webkit-box-shadow: inset 0 0 0 800px #00000067;
+          box-shadow: inset 0 0 0 800px #00000067;
+  -webkit-filter: blur(14px);
+          filter: blur(14px);
+  z-index: -1;
+}
+
+.fRoboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.displayN {
+  display: none;
+}
+
+.cursorP {
+  cursor: pointer;
+}
+
+/* position fixed to */
+.pos-fix-left {
+  position: fixed;
+  left: 0;
+}
+
+.pos-fix-rigth {
+  position: fixed;
+  right: 0;
+}
+
+.pos-fix-top {
+  position: fixed;
+  top: 0;
+}
+
+.pos-fix-bottom {
+  position: fixed;
+  bottom: 0;
+}
+
+/*position absolute to */
+.pos-absolute-left {
+  position: relative;
+  left: 0;
+}
+
+.pos-absolute-rigth {
+  position: relative;
+  right: 0;
+}
+
+.pos-absolute-top {
+  position: relative;
+  top: 0;
+}
+
+.pos-absolute-bottom {
+  position: relative;
+  bottom: 0;
+}
+
+/*max-width*/
+.mw500 {
+  max-width: 500px;
+}
+
+/*Padding*/
+.pdg10 {
+  padding: 10px;
+}
+
+.pdg12 {
+  padding: 12px;
+}
+
+.pdg16 {
+  padding: 16px;
+}
+
+.pdg20 {
+  padding: 20px;
+}
+
+.pdg25 {
+  padding: 25px;
+}
+
+.pdg30 {
+  padding: 30px;
+}
+
+.pdg35 {
+  padding: 25px;
+}
+
+.pdg40 {
+  padding: 30px;
+}
+
+.pdg45 {
+  padding: 25px;
+}
+
+.pdg50 {
+  padding: 30px;
+}
+
+.pdgT60 {
+  padding-top: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*Margin top*/
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
+.mt50 {
+  margin-top: 50px;
+}
+
+/*Margin botton*/
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+/*Margin left*/
+.ml10 {
+  margin-left: 10px;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.ml30 {
+  margin-left: 30px;
+}
+
+/*Margin rigth*/
+.mr10 {
+  margin-right: 10px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.mr30 {
+  margin-right: 30px;
+}
+
+/*Font size*/
+.fs12 {
+  font-size: 12px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fs23 {
+  font-size: 23px;
+}
+
+.fs25 {
+  font-size: 25px;
+}
+
+.fs30 {
+  font-size: 30px;
+}
+
+.fs35 {
+  font-size: 35px;
+}
+
+.fs40 {
+  font-size: 40px;
+}
+
+.fs50 {
+  font-size: 50px;
+}
+
+.fs120 {
+  font-size: 100px;
+}
+
+.fwB {
+  font-weight: bold;
+}
+
+.fwN {
+  font-weight: lighter;
+}
+
+/*Interlineado*/
+.lh2 {
+  line-height: 2;
+}
+
+.lh1p5 {
+  line-height: 1.5;
+}
+
+/*Overflow*/
+.ofXscroll {
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.ofYscroll {
+  overflow: none;
+  overflow-y: auto;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 720px;
+}
+
+.formulario ham-title {
+  font-size: 15px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  margin: 12px 0;
+}
+
+.ham-input {
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+}
+
+.ham-btn {
+  margin-top: 25px;
+  border: 1px solid rgba(230, 230, 230, 0.5);
+  cursor: pointer;
+  border-radius: 10px;
+  min-width: 25px;
+  min-height: 25px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: .12s ease-in-out;
+  transition: .12s ease-in-out;
+}
+
+.ham-btn:hover {
+  background: #3498db;
+  border-bottom: solid 1px #3498db;
+  color: #f1f1f1;
+}
+/*# sourceMappingURL=style.css.map */

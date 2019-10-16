@@ -1,0 +1,67 @@
+/* Implementacion de flexbox por Jorge Rea (Edham)
+ -	Flexbox es una implementacion que tiene css que nos permite ordenar los elementos
+	de una manera mas sencilla.
+ -  La manera de que funcione es asignandole la propiedad flex al contenedor padre 
+ 	y un flujo direccion(renglon o columna)
+*/
+
+
+/* Desliega los elementos en columna*/
+.col{
+    display: flex; flex-direction: column;
+    
+    /* X: variable; Y: en el inicio;*/
+    &.ss{justify-content: flex-start;align-items: flex-start;}
+    &.sc{justify-content: flex-start;align-items: center;}
+    &.se{justify-content: flex-start;align-items: flex-end;}
+    
+    /* X: variable; Y: en el centro;*/
+    &.cs{justify-content: center;align-items: flex-start;}
+    &.cc{justify-content: center;align-items: center;}
+    &.ce{justify-content: center;align-items: flex-end;}
+    
+    /* X: variable; Y: en el fin;*/
+    &.es{justify-content: flex-end;align-items: flex-start;}
+    &.ec{justify-content: flex-end;align-items: center;}
+    &.ee{justify-content: flex-end;align-items: flex-end;}
+
+}
+/* Despliega los elementos en renglon*/
+.row{
+    display: flex; flex-direction: row;
+
+    /* X: estatica; Y: variable;*/
+    &.up{align-items: flex-start;}
+    &.middle{align-items: center;}
+    &.down{align-items: flex-end;}
+    
+    /* ajusta los elementos respecto al espacio que tienen alrededor*/
+    &.sa{align-items: flex-start; justify-content: space-around;}
+    /* Ajusta los elementos al centro */
+    &.cc{align-items: center; justify-content: center;}
+    /* ajusta los elementos respecto al espacio que hay entre ellos*/
+    &.sb{align-items: flex-end; justify-content: space-between;}
+    
+}
+/* la propiedad wrap nos permite que un contenedor se desplace hacia abajo 
+   si es que este se queda sin espacio*/
+.wp{flex-wrap: wrap;}
+.nwp{flex-wrap: nowrap;}
+
+/*Hace que los elementos dentro de la etiqueta tengan la misma proporcion*/ 
+.fg{flex-grow: 1}
+
+/* parte la palabra si el contenedor donde esta se queda sin espacio*/
+.wordbk{word-break: break-all;}
+
+
+
+@media (max-width: 720px) {
+	.fixFlow{
+		flex-direction: column !important;
+	}
+	.fixFlowC{
+		flex-direction: column !important;
+		align-items: center;
+	}
+}

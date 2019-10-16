@@ -1,0 +1,7 @@
+.grid{
+    display: grid;
+    &-cc{
+        display: grid;
+        place-items: center;
+    }
+}

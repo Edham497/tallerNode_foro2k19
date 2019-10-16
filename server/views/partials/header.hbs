@@ -1,0 +1,15 @@
+<ham-header class="material-dark">
+    <ham-logo>Glass.js</ham-logo>
+    <ham-nav>
+        <ham-item>Ejemplos</ham-item>
+        <ham-item>Code</ham-item>
+    </ham-nav>
+</ham-header>
+<script>
+    document.querySelector('ham-logo').onclick = ()=> window.location = '/'
+
+    let items = document.querySelectorAll('ham-item')
+    items[0].onclick= () => window.location = '/links'
+    items[1].onclick= () => window.location = '/links/add'
+            
+</script>

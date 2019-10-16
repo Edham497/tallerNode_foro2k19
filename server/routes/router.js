@@ -1,10 +1,11 @@
-const router = require('express').Router()
+// Este modulo almacenara las rutas de la aplicacion
 
-const posts = require('./api/posts.js')
-router.use('/api/posts', posts)
+const express = require('express')
+const router = express.Router();
 
-router.get('/', (req, res)=>{
-    res.send('HW')
+router.get('/', (req, res) =>{
+    res.render('index',{
+    })
 })
 
 module.exports = router

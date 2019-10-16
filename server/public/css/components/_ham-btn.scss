@@ -1,0 +1,14 @@
+ham-btn{
+    display: grid;
+    padding: .6em .8em;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 6px;
+
+    &.danger{
+        @extend .material-normal;
+    }
+    &.electric{
+        @extend .electric-dark;
+    }
+}
