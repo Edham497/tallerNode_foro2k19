@@ -2,7 +2,10 @@
     <ham-logo>{{ titulo}}</ham-logo>
     <ham-nav>
         <ham-item>Links</ham-item>
+        <ham-item>newLink</ham-item>
         <ham-item>posts</ham-item>
+        <ham-item>newPost</ham-item>
+
     </ham-nav>
 </ham-header>
 <script>
@@ -10,6 +13,8 @@
 
     let items = document.querySelectorAll('ham-item')
     items[0].onclick= () => window.location = '/links'
-    items[1].onclick= () => window.location = '/posts'
+    items[1].onclick= () => window.location = '/links/add'
+    items[2].onclick= () => window.location = '/posts'
+    items[3].onclick= () => window.location = '/posts/add'
             
 </script>

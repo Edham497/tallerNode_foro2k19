@@ -1,0 +1,15 @@
+<div class="ham-container pdg20 fs25 col ss">
+    Agregar Link
+</div>
+<ham-container class="pdg30 col">
+    {{!-- <div>Agregar Link</div> --}}
+    <form action="/posts/add" method="POST" class="formulario col" enctype="multipart/form-data">
+        <div class="ham-subtitle mrg0 pdg0 pdgV10">Titulo</div>
+        <input type="text" name="title" class="pdg10 ham-input">
+        <div class="ham-subtitle mrg0 pdg0 pdgV10">Nombre</div>
+        <input type="text" name="autor" class="pdg10 ham-input">
+        <div class="ham-subtitle mrg0 pdg0 pdgV10">Imagen</div>
+        <input type="file" name="archivo" id="archivo" class="img-cont">
+        <input class="ham-btn mt10 fullW" type="submit" value="Agregar">
+    </form>
+</ham-container>

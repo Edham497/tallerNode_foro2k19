@@ -4,10 +4,10 @@ const router = express.Router();
 const pool = require('../db')
 
 router.get('/', async (req, res)=>{
-    // let posts = await pool.query('select * from posts')
+    let posts = await pool.query('select * from post')
     res.render('posts/list', {
         titulo: "Taller de Node.js",
-        // posts: posts
+        posts: posts
     })
 })
 
@@ -18,8 +18,22 @@ router.get('/add', (req, res)=>{
 })
 
 router.post('/add', async (req, res)=>{
-    
-    // await pool.query('insert into posts set ?', [newPost])
+    const {title, autor} = req.fields
+    let dir = `${req.files.archivo.path}`
+    const newPost = {
+        title,
+        autor,
+        dir: dir.split("\\")[3]
+    }
+    // console.log(newPost.dir)
+    await pool.query('insert into post set ?', [newPost])
+    res.redirect('/posts')
+})
+
+
+router.get('/delete/:id', async (req, res)=>{
+    const{id} = req.params
+    await pool.query('delete from post where id = ?', [id])
     res.redirect('/posts')
 })
 

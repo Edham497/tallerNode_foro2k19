@@ -35,11 +35,11 @@ app.set('view engine', '.hbs')
 //middlewares
 app.use(morgan('dev'));
 //Configuracion de donde se guardaran las imagenes
-app.use(formidable({keepExtensions:true}))
+app.use(formidable({keepExtensions:true, uploadDir: "./server/public/images"}))
 
 //Routes
 app.use(require('./routes/router'))
-app.use(require('./routes/authentication'))
+// app.use(require('./routes/authentication'))
 app.use('/links',require('./routes/links'))
 app.use('/posts',require('./routes/posts'))
 
