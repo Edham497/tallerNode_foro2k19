@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 const morgan = require('morgan')
 //body-parser
 const bodyParser = require('body-parser')
+const formidable = require('express-formidable')
 
 // inicializations
 const app = express();
@@ -33,11 +34,14 @@ app.set('view engine', '.hbs')
 
 //middlewares
 app.use(morgan('dev'));
+//Configuracion de donde se guardaran las imagenes
+app.use(formidable({keepExtensions:true}))
 
 //Routes
 app.use(require('./routes/router'))
 app.use(require('./routes/authentication'))
 app.use('/links',require('./routes/links'))
+app.use('/posts',require('./routes/posts'))
 
 //public
 app.use(express.static(`${__dirname}/public`))

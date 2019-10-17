@@ -1,9 +1,10 @@
-ham-btn{
-    display: grid;
-    padding: .6em .8em;
+.ham-btn{
+    z-index: 3;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    user-select: none;
-    border-radius: 6px;
+    transition: .15s ease-in-out;
 
     &.danger{
         @extend .material-normal;
@@ -11,4 +12,13 @@ ham-btn{
     &.electric{
         @extend .electric-dark;
     }
+    &:hover{
+        color: #fff;
+    background-color: #1a82ae;
+    border-color: #187aa3;
+    }
+}
+input[type="radio"]{
+    position: absolute;
+    opacity: 0;
 }

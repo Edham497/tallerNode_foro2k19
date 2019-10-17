@@ -16,6 +16,10 @@ npm i nodemon --dev
 ``` 
 
 # Modulo 0 - Repaso de JavaScript
+
+### ¿Que es Javascript?
+JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico.
+
 - Tipo de Datos
     ```js
     var x;                  //Scope por funcion
@@ -206,6 +210,14 @@ npm i nodemon --dev
         res.render('links/list', {links})
     })
     ```
-
+- Http Server
+    ```js
+    var http = require('http');
+        http.createServer(function (req, res) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write('<h1>Hello World!</h1>')
+        res.end();
+    }).listen(8080);
+    ```
 # Modulo 1 - Backend del servidor
 ## 1.1 Inicializar componentes

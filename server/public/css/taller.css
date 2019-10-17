@@ -1,0 +1,20 @@
+.pos-rel{
+    position: relative;
+}
+.pos-abs{
+    position: absolute;
+}
+.pos-fix{
+    position: fixed;
+}
+
+.float-btn{
+    right: 0;
+    top: 0;
+    text-decoration: none;
+}
+
+.ghost-btn{
+    background: transparent;
+    border: solidrgb(206, 206, 206) 2px;
+}

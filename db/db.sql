@@ -1,3 +1,4 @@
+drop database links;
 create database links;
 
 use links;
@@ -32,3 +33,10 @@ alter table links
 
 alter table links
     modify id int(11) not null auto_increment, auto_increment = 2;
+
+use links;
+alter table links
+    add color varchar(25);
+
+use links;
+select * from links;

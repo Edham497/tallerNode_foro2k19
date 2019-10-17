@@ -1,15 +1,27 @@
-<div class="ham-container pdg20 fs25 col ss material-light">
+<div class="ham-container pdg20 fs25 col ss">
     Agregar Link
 </div>
-<ham-container class="material-dark pdg30 col">
-    {{!-- <ham-title>Agregar Link</ham-title> --}}
-    <form action="/links/add" method="POST" class="formulario col">
-        <ham-title>Titulo</ham-title>
-        <input type="text" name="title" class="pdg10 ham-input material-darker">
-        <ham-title>URL</ham-title>
-        <input type="text" name="url" class="pdg10 ham-input material-darker">
-        <ham-title>Descripcion</ham-title>
-        <textarea name="description" rows="2" class="material-darker pdg10" style="resize: none; border: none;"></textarea>
-        <input class="ham-btn material-normal" type="submit" value="Agregar">
+<ham-container class="pdg30 col">
+    {{!-- <div>Agregar Link</div> --}}
+    <form action="/links/add" method="POST" class="formulario col" enctype="multipart/form-data">
+        <div class="ham-subtitle mrg0 pdg0 pdgV10">Titulo</div>
+        <input type="text" name="title" class="pdg10 ham-input">
+        <div class="ham-subtitle mrg0 pdg0 pdgV10">URL</div>
+        <input type="text" name="url" class="pdg10 ham-input">
+        <div class="ham-subtitle mrg0 pdg0 pdgV10">Descripcion</div>
+        <textarea name="description" rows="2" class=" pdg10" style="resize: none; border: none;"></textarea>
+        <div class="colores row">
+            <label class="ham-btn pdg10 mt10 ham-red" for="r1">ham-red</label>
+            <input type="radio" id="r1"name="color" value="ham-red" class="ham-red">
+            <label class="ham-btn pdg10 mt10 ham-blue" for="r2">ham-blue</label>
+            <input type="radio" id="r2"name="color" value="ham-blue" class="ham-blue">
+            <label class="ham-btn pdg10 mt10 ham-green" for="r3">ham-green</label>
+            <input type="radio" id="r3"name="color" value="ham-green" class="ham-green">
+            <label class="ham-btn pdg10 mt10 ham-yellow" for="r4">ham-yellow</label>
+            <input type="radio" id="r4"name="color" value="ham-yellow" class="ham-yellow">
+            <label class="ham-btn pdg10 mt10 ham-orange" for="r5">ham-orange</label>
+            <input type="radio" id="r5"name="color" value="ham-orange" class="ham-orange">
+        </div>
+        <input class="ham-btn mt10 fullW" type="submit" value="Agregar">
     </form>
 </ham-container>

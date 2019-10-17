@@ -1,12 +1,18 @@
-<div class="ham-container col material-light pdg20 cc">
-    <h1>Links</h1>
-</div>
-<div class="ham-container" style="overflow-y: auto">
-{{#each links}}
-        <div class="ham-container">
-            <div class="ham-title pdg20 fs25 material-normal">{{title}}</div>
-            <div class="ham-text pdg10 material-dark">{{url}}</div>
-            <div class="ham-text pdg10 material-dark">{{description}}</div>
-        </div>
-{{/each}}
+
+<div class="ham-title fullW tac brn">Links</div>
+<div class="ham-container">
+    {{#each links}}
+    <div class="ham-container ham-title cold-light pos-rel">{{title}}
+        <div class="ham-subtitle {{color}}"><a class="tdn" href="/external/{{url}}">{{url}}</a></div>
+        {{!-- helper --}}
+        <p class="fs12 pdg20 mt10 cold-lightgrey">{{description}}</p>
+        <a href="/links/delete/{{id}}" class="float-btn pos-abs fs20 pdg10">x</a>
+        <span class="fs12">{{timeago created}}</span>
+    </div>
+    {{!-- <div class="ham-container">
+        <div class="ham-title pdg20 fs25 material-normal">{{title}}</div>
+        <div class="ham-text pdg10 material-dark">{{url}}</div>
+        <div class="ham-text pdg10 material-dark">{{description}}</div>
+    </div> --}}
+    {{/each}}
 </div>
